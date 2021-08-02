@@ -12,7 +12,8 @@ dp = Dispatcher(bot)
 @dp.message_handler(commands=['start'])
 async def startMessage(message: types.Message):
     await message.reply(
-        f"Assalomu alaykum {message['from']['first_name']}\nNew York Times maqolalarni qidirish bolimiga xush kelibsiz!")
+        f"Assalomu alaykum {message['from']['first_name']}\nNew York Times maqolalarni qidirish bolimiga"
+        f" xush kelibsiz!\no'zingizga kerakli article nomini yozing.")
 
 
 @dp.message_handler()
@@ -24,8 +25,8 @@ async def sendAritcles(message: types.Message):
         i = 0
         for article in articles:
             await message.reply(article['web_url'])
-            i +=1
-            if i >=3:
+            i += 1
+            if i >= 3:
                 break
     except:
         await message.reply("Ushbu so'zlarga mos maqola topa olmadik.")
