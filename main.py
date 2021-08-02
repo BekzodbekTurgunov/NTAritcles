@@ -17,6 +17,7 @@ async def startMessage(message: types.Message):
 
 @dp.message_handler()
 async def sendAritcles(message: types.Message):
+    print("Message: " + message.text)
     try:
         articles = getArticles(message.text)
         print(len(articles))
